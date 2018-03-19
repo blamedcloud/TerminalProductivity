@@ -1,0 +1,25 @@
+TMUX
+
+	prefix: ^b (ctrl + b)
+
+	https://tmuxcheatsheet.com
+
+	commands beginning with '$' are from command line.
+	commands beginning with ':' are from command line within tmux.
+	commands beginning with prefix use the above prefix within tmux.
+
+Sessions
+
+	Start a new session:
+
+		$ tmux
+		$ tmux new
+		$ tmux new-session
+
+		: new	
+
+	Start a new session with the name mysession:
+
+		$ tmux new -s mysession
+
+		: new -s mysession
