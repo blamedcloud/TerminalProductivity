@@ -23,3 +23,185 @@ Sessions
 		$ tmux new -s mysession
 
 		: new -s mysession
+
+	Kill/Delete session mysession
+
+		$ tmux kill-ses -t mysession
+		$ tmux kill-session -t mysession
+
+	Kill/Delete all sessions but the current
+
+		$ tmux kill-session -a
+
+	Kill/Delete all sessions but mysession
+
+		$ tmux kill-session -a -t mysession
+
+	Rename session
+
+		prefix $
+
+	Detach from session
+
+		prefix d
+
+	Show all sessions
+
+		$ tmux ls
+		$ tmux list-sessions
+
+		prefix s
+
+	Attach to last session
+
+		$ tmux a
+		$ tmux at
+		$ tmux attach
+		$ tmux attach-session
+
+	Attach to a session with the name mysession
+
+		$ tmux a[ttach-session] -t mysession
+
+	Move to previous session
+
+		prefix (
+
+	Move to next Session
+
+		prefix )
+
+Windows
+
+	Start a new session with the name mysession and window mywindow
+
+		$ tmux new -s mysession -n mywindow
+
+	Create window
+
+		prefix c
+
+	Rename current window
+
+		prefix ,
+	
+	Close current window
+
+		prefix &
+
+	Previous window
+
+		prefix p
+
+	Next window
+
+		prefix n
+
+	Switch to window by number
+
+		prefix 0...9
+
+	Reorder window, swap window number 2(src) and 1(dst)
+
+		: swap-window -s 2 -t 1
+
+	Move current window to the left by one position
+
+		: swap-window -t -1
+
+Panes
+
+	Toggle last active pane
+
+		prefix ;
+
+	Split pane vertically
+
+		prefix %
+
+	Split pane horizontally
+
+		prefix "
+			default
+		prefix -
+			mine
+
+	Move the current pane left
+
+		prefix {
+
+	Move the current pane right
+
+		prefix }
+
+	Switch to pane in the direction
+
+		prefix <up>
+		prefix <down>
+		prefix <right>
+		prefix <left>
+
+	Toggle between pane layouts
+
+		prefix Spacebar
+
+	Switch to next pane
+
+		prefix o
+
+	Show pane numbers
+
+		prefix q
+
+	Switch/select pane by number
+
+		prefix q 0..9
+
+	Toggle pane zoom
+
+		prefix z
+
+	Convert pane into a window
+
+		prefix !
+
+	Resize current pane height/width (holding second key is optional)
+
+		prefix+<up>
+		prefix Ctrl+<up>
+
+		prefix+<down>
+		prefix Ctrl+<down>
+
+		prefix+<right>
+		prefix Ctrl+<right>
+
+		prefix+<left>
+		prefix Ctrl+<left>
+
+	Close current pane
+
+		prefix x
+
+Misc.
+
+	scroll cursor around (press q to exit scroll mode)
+
+		prefix [
+
+
+VIM
+
+	find/replace
+		:[%]s/foo/bar/g[c][i]
+			% searches all lines instead of current line only
+			c asks for confirmation before replacing
+			i case insensitive
+
+	vim tabs
+		:tabedit file.txt
+			opens file.txt in a new tab
+		gt
+			go to next tab
+		gT
+			go to previous tab
