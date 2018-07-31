@@ -205,3 +205,9 @@ VIM
 			go to next tab
 		gT
 			go to previous tab
+
+	reload file
+		:edit!
+
+	autocomplete
+		^N
