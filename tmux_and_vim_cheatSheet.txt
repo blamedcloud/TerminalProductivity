@@ -211,3 +211,23 @@ VIM
 
 	autocomplete
 		^N
+
+	Indenting
+
+		:set tabstop 4
+			tabs are size 4
+		:set shiftwidth=4
+			indents are size 4
+		:set autoindent
+			auto indent
+		:set smartindent
+			does the right thing (mostly) in programs
+
+		in insert mode:
+			^t, ^d
+				indent current line forwards, backwards
+		
+		in visual mode:
+			> or < 
+				indent block by shiftwidth (repeat with . )
+		
