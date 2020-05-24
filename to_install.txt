@@ -1,0 +1,6 @@
+vim
+tmux
+curl
+python3
+python-is-python3
+libxml2-utils

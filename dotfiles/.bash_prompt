@@ -1,0 +1,62 @@
+#!/bin/bash
+
+parse_git_branch() {
+    local branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    local repoFull=$(git rev-parse --show-toplevel 2> /dev/null)
+    if [ -n "$repoFull" ]
+    then
+        local repo=$(basename $repoFull)
+    else
+        local repo=
+    fi
+    if [ -n "$repo" ]
+    then
+        local currentDir=$(pwd)
+        if [ $# -eq 1 ] && [ "$1" = "short" ]
+        then
+            echo " ($branch) "
+        elif [ "$repoFull" == "$currentDir" ]
+        then
+            echo " ($branch) "
+        else
+            echo " ($repo:$branch) "
+        fi
+    else
+        echo ""
+    fi
+}
+
+__prompt_path_short='\W'
+__prompt_path_long='\w'
+
+# switch these to use short or long style path in the prompt
+#__prompt_path=$__prompt_path_short
+__prompt_path=$__prompt_path_long
+
+# if this is set to yes, include git information in the prompt
+__git_prompt=yes
+
+if [ "$__prompt_path" = '\w' ]
+then
+    __git_length="short"
+else
+    __git_length="long"
+fi
+
+__debian_chroot='${debain_chroot:+($debian_chroot)}'
+
+__color_green='\[\033[01;32m\]'
+__color_clear='\[\033[00m\]'
+__color_blue='\[\033[01;34m\]'
+__color_yellow='\[\033[01;33m\]'
+
+if [ "$__git_prompt" = yes ]
+then
+    PS1="$__debian_chroot${__color_green:-}\u@\h${__color_clear:-}:${__color_blue:-}$__prompt_path${__color_yellow:-}\$(parse_git_branch $__git_length)${__color_clear:-}\$ "
+else
+    PS1="$__debian_chroot${__color_green:-}\u@\h${__color_clear:-}:${__color_blue:-}$__prompt_path${__color_clear:-}\$ "
+fi
+
+unset __color_green __color_clear __color_blue __color_yellow
+unset __debian_chroot __prompt_path_short __prompt_path_long __prompt_path __git_prompt __git_length
+
