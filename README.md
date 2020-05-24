@@ -1,5 +1,5 @@
 # TerminalProductivity
-A collection of references, scritps, and config files to enhance productivity in a terminal environment.
+A collection of references, scripts, and config files to enhance productivity in a terminal environment.
 
 ### Setup:
 
