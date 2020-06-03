@@ -15,7 +15,7 @@ Some things you may want to be aware of:
     * ~/.vimrc
     * ~/.tmux.conf
     * ~/.bash\_aliases
-    * ~/.bash\_prompt (as far as I know this isn't a standard file so this should be file)
+    * ~/.bash\_prompt (as far as I know this isn't a standard file so this should be fine)
     * files in ~/bin that share a name with files in TerminalProductivity/bin
     * files in ~/bin that share a name with files in LogInstall/bin
 
