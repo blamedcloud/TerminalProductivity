@@ -64,6 +64,7 @@ scas() {
 update_brc_all_sessions() {
     skas C-z
     scas brc
+    scas trc
 # choose fgcls to clear the screen, or fgc to only check for fg
     scas fgc
     #scas fgcls
@@ -139,6 +140,7 @@ masterpull() {
 
 ### Aliases ###
 alias brc='source ~/.bashrc'
+alias trc='tmux source-file ~/.tmux.conf'
 
 alias gfs='git fetch --all; git status'
 alias gfbs='git fetch --all; git branch; git status'

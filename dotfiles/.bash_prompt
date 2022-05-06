@@ -35,6 +35,7 @@ __prompt_path=$__prompt_path_long
 
 # if this is set to yes, include git information in the prompt
 __git_prompt=yes
+#__git_prompt=no
 
 if [ "$__prompt_path" = '\w' ]
 then
