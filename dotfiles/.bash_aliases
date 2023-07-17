@@ -82,9 +82,21 @@ cdabovesrctarget() {
     if [[ $(pwd) == *"/src/"* ]]
     then
         cd $(pwd | awk -F 'src' '{print $1}')
+    elif [[ $(pwd) == *"/src" ]]
+    then
+        cd ..
     elif [[ $(pwd) == *"/target/"* ]]
     then
         cd $(pwd | awk -F 'target' '{print $1}')
+    elif [[ $(pwd) == *"/target" ]]
+    then
+        cd ..
+    elif [[ $(pwd) == *"/tests/"* ]]
+    then
+        cd $(pwd | awk -F 'tests' '{print $1}')
+    elif [[ $(pwd) == *"/tests" ]]
+    then
+        cd ..
     fi
 }
 
