@@ -150,6 +150,10 @@ masterpull() {
     fi
 }
 
+showqr() {
+    qrencode $1 -o - | feh -
+}
+
 ### Aliases ###
 alias brc='source ~/.bashrc'
 alias trc='tmux source-file ~/.tmux.conf'
